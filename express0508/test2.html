@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+               body{
+            background-color: rgb(214, 214, 214);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 800px;
+            position: absolute;
+            left: calc(50% - 400px);
+            top: 30px;
+
+        }
+        table {
+            text-align: center;
+            width: 100%;
+        }
+        caption{
+            font-size: 40px;
+            font-weight: bold  ;
+        }
+        thead tr{
+            background-color: rgb(20, 90, 67);
+        }
+        tbody tr:nth-of-type(2n) {
+            background-color: rgb(114, 167, 228);
+        }
+
+        tbody tr:nth-of-type(2n+1) {
+            background-color: rgb(241, 159, 159);
+        }
+        input{
+            text-align: center;
+            border-radius: 7px;
+            border: 0;
+            width: 120px;
+            height: 20px;
+            line-height: 20px;
+        }
+        
+        th,tr{
+            height: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- {{each mess}}
+        {{$value.id}}
+        {{$value.name}}
+        {{/each}} -->
+
+
+
+        <!-- {{result}} -->
+        <!-- {{each result}}
+        {{$value.id}}
+        {{$value.name}}
+        {{$value.password}}<br>
+        {{/each}} -->
+
+
+        
+
+<div class="container">
+     <table border="1">
+            <caption>注册列表</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each result}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.password}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</div>
+       
+        
+
+
+
+</body>
+</html>

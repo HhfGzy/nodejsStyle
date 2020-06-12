@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <table border="1">
+            <form action="add" method="POST">
+                <tr>
+                    <th><input type="text" name="id" required></th>
+                    <th><input type="text" name="movieName" required></th>
+                    <th><input type="text" name="moviePrice" required></th>
+                    <th><input type="date" name="movieTime" required></th>
+                    <th><input type="submit" value="点击我提交"></th>
+                </tr>
+                
+            </form>
+
+            <thead >
+                <tr>
+                    <caption>
+                        电影表格
+                    </caption>
+                    <th>电影id</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each movies}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.movieName}}</td>
+                    <td>{{$value.moviePrice}}</td>
+                    <td>{{$value.movieTime}}</td>
+                    <td><a href="del?id={{$value.id}}">删除</a>&nbsp;<a href="update?id={{$value.id}}">修改</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </body>
+
+</html>

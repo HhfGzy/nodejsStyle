@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<style>
+     body{
+            background-color: rgb(214, 214, 214);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 800px;
+            position: absolute;
+            left: calc(50% - 400px);
+            top: 30px;
+        }
+        table {
+            text-align: center;
+            width: 100%;
+        }
+        thead tr{
+            background-color: rgb(20, 90, 67);
+        }
+        tbody tr:nth-of-type(2n) {
+            background-color: rgb(114, 167, 228);
+        }
+
+        tbody tr:nth-of-type(2n+1) {
+            background-color: rgb(241, 159, 159);
+        }
+        input{
+            text-align: center;
+            border-radius: 7px;
+            border: 0;
+            width: 120px;
+            height: 20px;
+            line-height: 20px;
+        }
+        input::placeholder{
+            color: rgb(179, 80, 55);
+        }
+        th,tr{
+            height: 30px;
+        }
+        
+</style>
+    <body>
+        <div class="container">
+            <table >
+                <caption>
+                    <h1>修改页面</h1> 
+                 </caption>
+            <thead>
+                <tr>
+                    <th>电影id</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form action="modify" method="POST">
+                    <tr>
+                        {{each updateData}}
+                        <th><input type="text" value="{{$value.id}}" name="id" readonly></th>
+                        <th><input type="text" value="{{$value.movieName}}" name="movieName" required></th>
+                        <th><input type="text" value="{{$value.moviePrice}}" name="moviePrice" required></th>
+                        <th><input type="date" value="{{$value.movieTime}}" name="movieTime" required></th>
+                        <th><input type="submit" value="点击我提交"></th>
+                        {{/each}}
+                    </tr>
+                </form>
+            </tbody>
+
+        </table>
+        </div>
+        
+
+    </body>
+
+</html>

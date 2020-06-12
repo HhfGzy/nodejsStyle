@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        body{
+            background-color: rgb(214, 214, 214);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 800px;
+            position: absolute;
+            left: calc(50% - 400px);
+            top: 30px;
+
+        }
+        table {
+            text-align: center;
+            width: 100%;
+        }
+        thead tr{
+            background-color: rgb(20, 90, 67);
+        }
+        tbody tr:nth-of-type(2n) {
+            background-color: rgb(114, 167, 228);
+        }
+
+        tbody tr:nth-of-type(2n+1) {
+            background-color: rgb(241, 159, 159);
+        }
+        input{
+            text-align: center;
+            border-radius: 7px;
+            border: 0;
+            width: 120px;
+            height: 20px;
+            line-height: 20px;
+        }
+        input::placeholder{
+            color: rgb(179, 80, 55);
+        }
+        th,tr{
+            height: 30px;
+        }
+        
+    </style>
+
+    <body>
+        <div class="container">
+           <table>
+            <form action="add" method="POST">
+                <tr>
+                    <th><input type="text" name="id" required placeholder="输入ID"></th>
+                    <th><input type="text" name="movieName" required placeholder="快点输入电影名"></th>
+                    <th><input type="text" name="moviePrice" required placeholder="电影价格不要太高"></th>
+                    <th><input type="date" name="movieTime" required placeholder="放映时间不要太迟"></th>
+                    <th><input type="submit" value="点击我提交吧~"></th>
+                </tr>
+
+            </form>
+            <caption><h1>电影表格</h1></caption>
+            <thead>
+                <tr>
+                    <th>电影ID</th>
+                    <th>电影名字</th>
+                    <th>电影价格</th>
+                    <th>电影时间</th>
+                    <th>菜单</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each showAll}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.movieName}}</td>
+                    <td>{{$value.moviePrice}}</td>
+                    <td>{{$value.movieTime}}</td>
+                    <td><a href="del?id={{$value.id}}">删除</a>&nbsp;<a href="update?id={{$value.id}}">修改</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table> 
+        </div>
+
+    </body>
+
+</html>

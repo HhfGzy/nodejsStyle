@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(221, 221, 221);
+}
+
+h1{
+    text-align: center;
+    color: rgb(107, 107, 107);
+}
+form{
+    
+    text-align: center;
+}
+form input{
+    height: 20px;
+    border: 2px solid rgb(83, 83, 83);
+    border-radius: 8px; 
+    text-align: center;
+}
+label:nth-of-type(1),label:nth-of-type(2){
+    display: inline-block;
+    margin-top: 20px;
+}
+#btm{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: rgb(112, 112, 112);
+    height: 30px;
+}
+
+
+

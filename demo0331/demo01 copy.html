@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>index</title>
+        <script src="../template-web.js"></script>
+    </head>
+
+    <body>
+        <!-- 借助script出案件创建的模板 -->
+        <script type="text/template" id="show">
+  <!-- 对象的遍历 -->
+  <!-- 用{{$value}}放没一项{{$index}}放属性 -->
+           对象的遍历
+           {{each user}} 
+           {{$value}}
+           {{if $index=== "color"}}
+                {{each $value}}
+                {{$value}}
+                {{/each}} 
+           {{/if}}  
+           {{/each}}
+            
+    
+    </script>
+        <script>
+            //对象的遍历
+            let mess1 = template('show', { 
+                name: 'w1', 
+                user:{
+                    username:'tony',
+                    age:20
+                } })
+            //document.body.innerHTML = mess1;
+            let mess2 = template('show', { 
+                
+                user:{
+                    username:'tony',
+                    age:20
+                } })
+            //document.body.innerHTML = mess2;
+            let mess3 = template('show', { 
+                color:["red","blue","red"]
+                })
+            //document.body.innerHTML = mess3;
+            let mess4 = template('show', { 
+                user:{
+                    username:'tony',
+                    age:20,
+                    color:["red","blue","red"]
+                }
+                });
+                
+                //document.body.innerHTML = mess4;
+                let mess5 = template('show', { 
+                user:{
+                    name:'tony',
+                    age:2,
+                    hobby:[
+                        {type:"生活方面",like:[]},
+                        {type:"学习方面",like:[]},
+                        {type:"生活方面",like:[]}
+                    ]
+                }
+                });
+        </script>
+    </body>
+
+</html>

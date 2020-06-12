@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="../template-web.js"></script>
+    </head>
+
+    <body>
+
+        <!-- 借助script创建的模板 -->
+        <script type="text/template" id="show1">
+            大家好我是{{name}},今年{{age}}岁
+        </script>
+        <script type="text/template" id="show2">
+        
+        
+        </script>
+
+        <script>
+            const mess1 = template("show1", {
+                name: "gzy",
+                age: 18
+            })
+            document.body.innerHTML = mess1;
+        </script>
+
+
+    </body>
+
+</html>

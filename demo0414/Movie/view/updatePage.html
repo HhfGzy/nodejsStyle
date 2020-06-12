@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <caption>
+                        修改页面
+                    </caption>
+                    <th>电影id</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                    <th>电影</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form action="modify" method="POST">
+                    <tr>
+                        {{each updateData}}
+                        <th><input type="text" value="{{$value.id}}" name="id" readonly></th>
+                        <th><input type="text" value="{{$value.movieName}}" name="movieName" required></th>
+                        <th><input type="text" value="{{$value.moviePrice}}" name="moviePrice" required></th>
+                        <th><input type="text" value="{{$value.movieTime}}" name="movieTime" required></th>
+                        <th><input type="submit" value="点击我提交"></th>
+                        {{/each}}
+
+                    </tr>
+                </form>
+            </tbody>
+
+        </table>
+
+    </body>
+
+</html>

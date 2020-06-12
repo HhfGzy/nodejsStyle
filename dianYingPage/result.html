@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="public/css/style2.css">
+    </head>
+
+    <body>
+        <!-- {{title}} -->
+       
+        <!-- {{each ref}}
+        {{$value.id}}
+        {{$value.movieName}}
+        {{$value.moviePrice}}
+        {{$value.movieTime}}
+        {{/each}} -->
+        <div class="container">
+            <h1>{{title}}</h1>
+            <div>
+                <input type="text" placeholder="输入电影id">
+                <input type="text" placeholder="请输入电影名称">
+                <input type="text" placeholder="请输入电影价格">
+                <input type="text" placeholder="请输入上映时间">
+                <button>新增</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <th>电影id</th>
+                    <th>电影名称</th>
+                    <th>电影价格</th>
+                    <th>上映时间</th>
+                    <th>操作</th>
+                </thead>
+                <tbody>
+                    {{each ref}}
+                    <tr>  
+                        <th>{{$value.id}}</th>
+                        <th>{{$value.movieName}}</th>
+                        <th>{{$value.moviePrice}}</th>
+                        <th>{{$value.movieTime}}</th>
+                        
+                        <th><a href="delate?id={{$value.id}}" >删除</a>&nbsp;<a href="update" id="update">修改</a></th>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </body>
+
+</html>
